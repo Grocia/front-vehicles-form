@@ -1,0 +1,40 @@
+<div>
+
+    <form [formGroup]="vehicleForm" (ngSubmit)="onClickSubmit(vehicleForm.value)">
+        <br><br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Manufacturer Name</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vehicle of vehiclesList">
+                    <td>{{ vehicle.VehicleId }}</td>
+                    <td>{{ vehicle.Type }}</td>
+                    <td>{{ vehicle.ManufacturerNameShort }}</td>
+                    <td>{{ vehicle.Price }}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input id="vehicleID" formControlName="vehicleID" type="text"></td>
+                    <td><input id="vehicleType" formControlName="vehicleType" type="text"></td>
+                    <td><input id="vehicleName" formControlName="vehicleName" type="text"></td>
+                    <td><input id="vehiclePrice" formControlName="vehiclePrice" type="text"></td>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <br>
+        <br>
+    </form>
+    <form [formGroup]="vehicleForm" (ngSubmit)="onClickShowAll()">
+        <input type="submit" value="Reload">
+    </form>
+
+</div>
